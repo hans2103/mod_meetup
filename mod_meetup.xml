@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade">
+    <name>Meetup</name>
+    <author>Hans Kuijpers</author>
+    <creationDate>September 2013</creationDate>
+    <copyright>Copyright (C) 2013 Hans Kuijpers</copyright>
+    <license>Released under the GNU/GPL License</license>
+    <authorEmail>info@hkweb.nl</authorEmail>
+    <authorUrl>http://hkweb.nl</authorUrl>
+    <version>1.0</version>
+    <description><![CDATA[
+        <h2>Display information of your meetup.com events</h2>
+        <ul>
+            <li>An <a href="http://www.meetup.com/meetup_api/key/" target="_blank">API key</a> for a valid meetup.com member account is required.<br/>
+              (see <a href="http://www.meetup.com/meetup_api/" target="_blank">Developers section</a> on meetup.com).</li>
+            <li>If the group is private then the account must also be a member of the group.</li>
+            <li>Use <a href="http://www.meetup.com/meetup_api/console/?path=/2/groups" target="_blank">MEETUP.com console</a> for Groupd_ID retrieval. Use the field 'group_urlname'.</li>
+            <li>Meetup is a fork of 'NS Meet' for Joomla 2.5 by Natural Selection.<br/>
+                NS Meet is a fork of 'Meetup events extension for Joomla' for Joomla 1.5 by Phuong Quan.</li>
+            <li>Implemented Rich Snippets for better SEO<br/>
+                <a href="http://www.data-vocabulary.org/Event/" target="_blank">http://www.data-vocabulary.org/Event/</a></li>
+        </ul>
+        ]]></description>
+    <files>
+        <filename module="mod_meetup">mod_meetup.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>tmpl/default.php</filename>
+    </files>
+    
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="Basic Options">            
+                <field name="meetupApiKey" type="text" size="50" label="Meetup API Key (required)" description="API key for a valid meetup.com member account. If group is private then the account must also be a member of the group." />
+                <field name="meetupGroupId" type="text" size="32" label="Meetup Group ID (required)" description="ID for the group" />
+                <field name="@spacer" type="spacer" default="" label="" description="" />
+                <field name="showEvents" type="radio" default="1" label="Show upcoming events" >
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="maxEvents" type="text" default="0" size="5" label="Max no. of events" description="Maximum number of events to show.  0=All" />
+                <field name="renderStyle" type="list" default="paragraph" label="Render Style" description="Render each event into a 'p' or 'li' block">
+                    <option value="paragraph">Paragraph</option>
+                    <option value="list">List</option>
+                </field>
+                <field name="showEventTime" type="radio" default="1" label="Show date and time of event" description="Format how this appears in the Advanced parameters" >
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="showEventVenue" type="radio" default="0" label="Show event venue" description="Show the venue for the event.  (Venue will not show if it is marked as private in meetup.com)">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="showEventLink" type="list" default="title" label="Show link to event" description="Direct link to meetup.com event page.  Anchor on event title, as separate link, or not at all. Opens in new window/tab.">
+                    <option value="none">No</option>
+                    <option value="title">Event Title</option>
+                    <option value="moreinfo">More info...</option>
+                </field>
+                <field name="@spacer" type="spacer" default="" label="" description="" />
+                <field name="showNumMembers" type="radio" default="0" label="Show the number of members" description="Show the number of members currently signed up to the group">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="eventTimeFormat" type="text" default="D j M g:ia" label="Format for date and time of event" description="String format for insertion into php date() function" />
+
+                <field name="numMembersFormat" type="text" size="64" default="We currently have {x} members" label="Format for number of members" description="{x} is replaced by retrieved value" />
+                <field name="@spacer" type="spacer" default="" label="" description="" />
+                <field name="timeout" type="text" size="5" default="2" label="Timeout in seconds" description="Timeout for API call" />
+                <field name="showEventTodayAll" type="radio" default="0" label="Show today's events all day" description="Events that take place on current day will continue to appear even after they have started">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="eventEmptyMessage" type="text" size="64" default="Our next event has not yet been scheduled" label="No events message" description="Message to display when no events are retrieved" />
+            </fieldset>
+        </fields>
+    </config>
+    
+    <config>
+        <fields name="params">
+            <fieldset name="advanced" label="Advanced Options">
+                <field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+                <field name="cache" type="list" default="0" label="Cache" description="CACHEDESC">
+                    <option value="1">Use Global</option>
+                    <option value="0">None</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="Cache Time" description="CACHETIMEDESC" />
+            </fieldset>
+        </fields>
+    </config>
+
+</extension>
