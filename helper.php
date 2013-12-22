@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @package        Module Meetup
- * @copyright    Copyright (C) 2013 Hans Kuijpers
- * @license        GNU General Public License version 3 or later
+ * @package     Module Meetup
+ * @copyright   Copyright (C) 2013 Hans Kuijpers
+ * @license     GNU General Public License version 3 or later
  * This is a fork of 'NS_Meet_v2.0' for Joomla 2.5 by Natural Selection 
  * The extension 'NS_Meet_v2.0' is a fork of 'Meetup events extension for Joomla' for Joomla 1.5 by Phuong Quan
  */
@@ -37,16 +37,24 @@ class modMeetupHelper
     function getEvents( $max_number, $time_format, $venue_format, $timeout, $todayall, $empty_message )
     {
 
-        $url = 'http://api.meetup.com/events.xml/?group_id='.self::$_group_id.'&key='.self::$_key;
+        $url = 'http://api.meetup.com/2/events?group_id='.self::$_group_id.'&key='.self::$_key;
 
-        if( $todayall )
+        $contents = file_get_contents($url); 
+
+        if(!empty($contents)) $events = json_decode($contents,true); 
+
+        return $events;
+        
+        /*
+        $url = 'http://api.meetup.com/events.xml/?group_id='.self::$_group_id.'&key='.self::$_key;
+if( $todayall )
         { $url .= '&after='. date('mdY', time()); }
         $cache_name = 'mod_meetup_events';
         $xml = self::getXml($url, $cache_name, $timeout);
 
         $events = array();
         
-        if ($xml->document->name() == 'oops') // if an error was returned just print the error
+        if ($xml->document->name() == 'oops') 
         { 
             $events[0]->name = $xml->document->toString(); 
             $events[0]->time = '';
@@ -99,6 +107,7 @@ class modMeetupHelper
         }
 
         return $events;
+*/
     }
 
     function getXml( $url, $cache_name, $timeout )
@@ -148,7 +157,7 @@ class modMeetupHelper
         else
         { $newstr = date($format, $idate); }
 
-        return $newstr;        
+        return $newstr;
     }
 
 }
