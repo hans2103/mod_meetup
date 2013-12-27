@@ -48,6 +48,7 @@ class modMeetupHelper
             $events[0]->venue = '';
             $events[0]->address_1 = '';
             $events[0]->url = '';
+            $events[0]->noevent = 1;
         }    
         else
         {
@@ -60,6 +61,7 @@ class modMeetupHelper
                 $events[0]->address_1 = '';
                 $events[0]->city = '';
                 $events[0]->url = '';
+                $events[0]->noevent = 1;
             }
             else
             {

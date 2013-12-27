@@ -13,6 +13,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 
 <div class="items-row">
 <?php foreach ($events as $event) :  ?>
+    <?php if(!$event->noevent) : ?>
     <div class="item" itemscope itemtype="http://data-vocabulary.org/Event">
         <span itemprop="eventType" style="display:none;">Meetup</span>
         <div class="item-header">
@@ -66,10 +67,12 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
             
         </div>
     </div>
+    <?php else : ?>
+    <div class="alert alert-info"><?php echo $event->name; ?></div>
+    <?php endif; ?>
 <?php endforeach; ?>
 </div>
 
 <?php if ($params->get('showNumMembers')) : ?>
     <p class="meetup_membercount"><?php echo $num_members; ?> </p>
-<?php endif; ?> 
-    
+<?php endif; ?>
