@@ -17,13 +17,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
     <div class="item" itemscope itemtype="http://data-vocabulary.org/Event">
         <span itemprop="eventType" style="display:none;">Meetup</span>
         <div class="item-header">
-            <h2>
+            <h3>
                 <?php if ($params->get('showEventLink') == 'title') : ?>
                     <a href="<?php echo $event->url ?>" itemprop="url" target="_blank"><span itemprop="summary"><?php echo $event->name; ?></span></a>
                 <?php else : ?>
                     <span itemprop="summary"><?php echo $event->name; ?></span>
                 <?php endif; ?>
-            </h2>
+            </h3>
         </div>
  
         <div class="item-content row-fluid">
