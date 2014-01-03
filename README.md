@@ -20,4 +20,4 @@ Credits
 * Meetup is a fork of 'NS Meet' for Joomla 2.5 by Natural Selection.
 * NS Meet is a fork of 'Meetup events extension for Joomla' for Joomla 1.5 by Phuong Quan.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-2000642-17/hans2103/mod_meetup)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-2000642-17/mod_meetup/readme)](https://github.com/igrigorik/ga-beacon)
