@@ -36,6 +36,7 @@ if ($params->get('showNumMembers')) {
 if ($params->get('showEvents')) { 
     $events = modMeetupHelper::getEvents( 
         $params->get('maxEvents'), 
+        $params->get('eventDateFormat'), 
         $params->get('eventTimeFormat'), 
         $params->get('eventVenueFormat'), 
         $params->get('timeout'), 

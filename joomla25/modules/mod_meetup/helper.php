@@ -33,7 +33,7 @@ class modMeetupHelper
         return $s;
     }
 
-    function getEvents( $max_number, $time_format, $venue_format, $timeout, $todayall, $empty_message, $max_text )
+    function getEvents( $max_number, $date_format, $time_format, $venue_format, $timeout, $todayall, $empty_message, $max_text )
     {
         $url = 'http://api.meetup.com/events.xml/?group_id='.self::$_group_id.'&key='.self::$_key;
         if( $todayall )
@@ -42,14 +42,14 @@ class modMeetupHelper
         $xml = self::getXml($url, $cache_name, $timeout);
         $events = array();
         if ($xml->document->name() == 'oops') // if an error was returned just print the error
-        { 
+        {
             $events[0]->name = $xml->document->toString(); 
             $events[0]->time = '';
             $events[0]->venue = '';
             $events[0]->address_1 = '';
             $events[0]->url = '';
             $events[0]->noevent = 1;
-        }    
+        }
         else
         {
             $items = $xml->document->getElementByPath( '/items' );
@@ -71,8 +71,8 @@ class modMeetupHelper
                     $events[$i]->name = $child->name[0]->data();
                     $events[$i]->url = $child->event_url[0]->data();
                     $events[$i]->starttime = htmlspecialchars(self::formatDateTime($child->time[0]->data(), 'Y-m-d H:i:s'));;
-                    $events[$i]->date = htmlspecialchars(self::formatDateTime($child->time[0]->data(), 'D d M'));;
-                    $events[$i]->time = htmlspecialchars(self::formatDateTime($child->time[0]->data(), 'H:i'));;
+                    $events[$i]->date = htmlspecialchars(self::formatDateTime($child->time[0]->data(), $date_format));;
+                    $events[$i]->time = htmlspecialchars(self::formatDateTime($child->time[0]->data(), $time_format));;
                     $events[$i]->rsvpcount_yes = $child->rsvpcount[0]->data();
                     $events[$i]->rsvpcount_spots_left = $child->rsvp_limit[0]->data()-$child->rsvpcount[0]->data();
                     $events[$i]->rsvpcount_waiting = $child->waiting_rsvpcount[0]->data();

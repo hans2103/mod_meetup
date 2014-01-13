@@ -100,6 +100,25 @@
                     description="MOD_MEETUP_FIELD_AMOUNTEVENTS_DESC" />
 
                 <field 
+                    name="showEventDate" 
+                    type="radio" 
+                    default="1" 
+                    label="MOD_MEETUP_FIELD_SHOWEVENTDATE_LABEL" 
+                    description="MOD_MEETUP_FIELD_SHOWEVENTDATE_DESC" >
+                    <option 
+                        value="0">JHIDE</option>
+                    <option 
+                        value="1">JSHOW</option>
+                </field>
+
+                <field 
+                    name="eventDateFormat" 
+                    type="text" 
+                    default="D j M" 
+                    label="MOD_MEETUP_FIELD_FORMATDATE_LABEL" 
+                    description="MOD_MEETUP_FIELD_FORMATDATE_DESC" />
+
+                <field 
                     name="showEventTime" 
                     type="radio" 
                     default="1" 
@@ -114,9 +133,9 @@
                 <field 
                     name="eventTimeFormat" 
                     type="text" 
-                    default="D j M g:ia" 
-                    label="MOD_MEETUP_FIELD_FORMATDATETIME_LABEL" 
-                    description="MOD_MEETUP_FIELD_FORMATDATETIME_DESC" />
+                    default="g:ia" 
+                    label="MOD_MEETUP_FIELD_FORMATTIME_LABEL" 
+                    description="MOD_MEETUP_FIELD_FORMATTIME_DESC" />
 
                 <field 
                     name="showEventDescription" 
