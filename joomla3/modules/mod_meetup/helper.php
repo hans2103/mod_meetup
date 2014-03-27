@@ -65,7 +65,7 @@ class modMeetupHelper
                 $events[$i]->venue                  = $event["venue"]["name"];
                 $events[$i]->address                = $event["venue"]["address_1"];
                 $events[$i]->city                   = $event["venue"]["city"];
-                $events[$i]->map                    = 'http://maps.google.com/maps?q='.str_replace(",", "%2C",str_replace(" ","+",$event["venue"]["venue_address1"])).'%2C'.str_replace(",", "%2C",str_replace(" ","+",$event["venue"]["city"]));
+                $events[$i]->map                    = 'http://maps.google.com/maps?q='.str_replace(",", "%2C",str_replace(" ","+",$event["venue"]["address_1"])).'%2C'.str_replace(",", "%2C",str_replace(" ","+",$event["venue"]["city"]));
                 $events[$i]->description            = preg_replace('/\s+?(\S+)?$/', '', substr(strip_tags($event["description"]), 0, $max_text)).'... ';
                 
                 if ($max_number > 0 && $i == ($max_number - 1))
