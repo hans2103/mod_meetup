@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" method="upgrade">
+<extension type="module" version="3.4" method="upgrade">
     <name>MOD_MEETUP_TITLE</name>
     <author>Hans Kuijpers</author>
     <authorEmail>info@hkweb.nl</authorEmail>
     <authorUrl>http://hkweb.nl</authorUrl>
     <creationDate>September 2013</creationDate>
     <license>Released under the GNU/GPL License</license>
-    <version>2.0.2</version>
+    <version>2.1.2</version>
     <description>MOD_MEETUP_DESC</description>
 
     <files folder="site">
@@ -25,212 +25,208 @@
     </media>
 
     <languages folder="site/language">
-        <language tag="en-GB">en-GB.mod_meetup.ini</language>
-        <language tag="en-GB">en-GB.mod_meetup.sys.ini</language>
-        <language tag="nl-NL">nl-NL.mod_meetup.ini</language>
-        <language tag="nl-NL">nl-NL.mod_meetup.sys.ini</language>
+        <language tag="en-GB">language/en-GB.mod_meetup.ini</language>
+        <language tag="en-GB">language/en-GB.mod_meetup.sys.ini</language>
     </languages>
 
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field 
-                    type="spacer" 
-                    name="meetuptitlerequired" 
+                <field
+                    type="spacer"
+                    name="meetuptitlerequired"
                     class="text"
                     label="MOD_MEETUP_FIELD_MEETUPREQUIRED_LABEL" />
 
-                <field 
-                    name="meetupApiKey" 
-                    type="text" 
-                    size="32" 
-                    label="MOD_MEETUP_FIELD_APIKEY_LABEL" 
+                <field
+                    name="meetupApiKey"
+                    type="text"
+                    size="32"
+                    label="MOD_MEETUP_FIELD_APIKEY_LABEL"
                     description="MOD_MEETUP_FIELD_APIKEY_DESC" />
 
-                <field 
-                    name="meetupGroupId" 
-                    type="text" 
-                    size="32" 
-                    label="MOD_MEETUP_FIELD_GROUPID_LABEL" 
+                <field
+                    name="meetupGroupId"
+                    type="text"
+                    size="32"
+                    label="MOD_MEETUP_FIELD_GROUPID_LABEL"
                     description="MOD_MEETUP_FIELD_GROUPID_DESC" />
 
-                <field 
-                    name="myspacer" 
-                    type="spacer" 
+                <field
+                    name="myspacer"
+                    type="spacer"
                     hr="true" />
 
-
-
-                <field 
-                    type="spacer" 
-                    name="meetuptitleoptional" 
+                <field
+                    type="spacer"
+                    name="meetuptitleoptional"
                     class="text"
                     label="MOD_MEETUP_FIELD_MEETUPOPTIONAL_LABEL" />
 
-                <field 
-                    name="showEvents" 
-                    type="radio" 
-                    default="1" 
-                    label="MOD_MEETUP_FIELD_SHOWEVENTS_LABEL" 
+                <field
+                    name="showEvents"
+                    type="radio"
+                    default="1"
+                    label="MOD_MEETUP_FIELD_SHOWEVENTS_LABEL"
                     description="MOD_MEETUP_SHOWEVENTS_DESC" >
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="showEventTodayAll" 
-                    type="radio" 
-                    default="0" 
-                    label="MOD_MEETUP_FIELD_TODAY_LABEL" 
+                <field
+                    name="showEventTodayAll"
+                    type="radio"
+                    default="0"
+                    label="MOD_MEETUP_FIELD_TODAY_LABEL"
                     description="MOD_MEETUP_FIELD_TODAY_DESC" >
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="maxEvents" 
-                    type="text" 
-                    size="5" 
-                    default="0" 
-                    label="MOD_MEETUP_FIELD_AMOUNTEVENTS_LABEL" 
+                <field
+                    name="maxEvents"
+                    type="text"
+                    size="5"
+                    default="0"
+                    label="MOD_MEETUP_FIELD_AMOUNTEVENTS_LABEL"
                     description="MOD_MEETUP_FIELD_AMOUNTEVENTS_DESC" />
 
-                <field 
-                    name="showEventDate" 
-                    type="radio" 
-                    default="1" 
-                    label="MOD_MEETUP_FIELD_SHOWEVENTDATE_LABEL" 
+                <field
+                    name="showEventDate"
+                    type="radio"
+                    default="1"
+                    label="MOD_MEETUP_FIELD_SHOWEVENTDATE_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWEVENTDATE_DESC" >
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="eventDateFormat" 
-                    type="text" 
-                    default="D j M" 
-                    label="MOD_MEETUP_FIELD_FORMATDATE_LABEL" 
+                <field
+                    name="eventDateFormat"
+                    type="text"
+                    default="D j M"
+                    label="MOD_MEETUP_FIELD_FORMATDATE_LABEL"
                     description="MOD_MEETUP_FIELD_FORMATDATE_DESC" />
 
-                <field 
-                    name="showEventTime" 
-                    type="radio" 
-                    default="1" 
-                    label="MOD_MEETUP_FIELD_SHOWEVENTTIME_LABEL" 
+                <field
+                    name="showEventTime"
+                    type="radio"
+                    default="1"
+                    label="MOD_MEETUP_FIELD_SHOWEVENTTIME_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWEVENTTIME_DESC" >
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="eventTimeFormat" 
-                    type="text" 
-                    default="g:ia" 
-                    label="MOD_MEETUP_FIELD_FORMATTIME_LABEL" 
+                <field
+                    name="eventTimeFormat"
+                    type="text"
+                    default="g:ia"
+                    label="MOD_MEETUP_FIELD_FORMATTIME_LABEL"
                     description="MOD_MEETUP_FIELD_FORMATTIME_DESC" />
 
-                <field 
-                    name="showEventDescription" 
-                    type="radio" 
-                    default="1" 
-                    label="MOD_MEETUP_FIELD_SHOWEVENTDESC_LABEL" 
+                <field
+                    name="showEventDescription"
+                    type="radio"
+                    default="1"
+                    label="MOD_MEETUP_FIELD_SHOWEVENTDESC_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWEVENTDESC_DESC">
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="maxDescCharacters" 
-                    type="text" 
-                    size="5" 
-                    default="175" 
-                    label="MOD_MEETUP_FIELD_MAXCHAR_LABEL" 
+                <field
+                    name="maxDescCharacters"
+                    type="text"
+                    size="5"
+                    default="175"
+                    label="MOD_MEETUP_FIELD_MAXCHAR_LABEL"
                     description="MOD_MEETUP_FIELD_MAXCHAR_DESC" />
 
-                <field 
-                    name="showEventLink" 
-                    type="list" 
-                    default="title" 
-                    label="MOD_MEETUP_FIELD_SHOWEVENTLINK_LABEL" 
+                <field
+                    name="showEventLink"
+                    type="list"
+                    default="title"
+                    label="MOD_MEETUP_FIELD_SHOWEVENTLINK_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWEVENTLINK_DESC">
-                    <option 
+                    <option
                         value="none">JNO</option>
-                    <option 
+                    <option
                         value="title">MOD_MEETUP_FIELD_SHOWEVENTLINK_EVENTTITLE</option>
-                    <option 
+                    <option
                         value="moreinfo">MOD_MEETUP_FIELD_SHOWEVENTLINK_READON</option>
                 </field>
 
-                <field 
-                    name="showEventVenue" 
-                    type="radio" 
-                    default="1" 
-                    label="MOD_MEETUP_FIELD_SHOWVENUE_LABEL" 
+                <field
+                    name="showEventVenue"
+                    type="radio"
+                    default="1"
+                    label="MOD_MEETUP_FIELD_SHOWVENUE_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWVENUE_DESC">
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="showEventMap" 
-                    type="radio" 
-                    default="1" 
-                    label="MOD_MEETUP_FIELD_SHOWMAPLINK_LABEL" 
+                <field
+                    name="showEventMap"
+                    type="radio"
+                    default="1"
+                    label="MOD_MEETUP_FIELD_SHOWMAPLINK_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWMAPLINK_DESC" >
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <!--<field 
-                    name="showNumGroup" 
-                    type="radio" 
-                    default="0" 
-                    label="MOD_MEETUP_FIELD_SHOWAMOUNTMEMBERS_LABEL" 
+                <!--<field
+                    name="showNumGroup"
+                    type="radio"
+                    default="0"
+                    label="MOD_MEETUP_FIELD_SHOWAMOUNTMEMBERS_LABEL"
                     description="MOD_MEETUP_FIELD_SHOWAMOUNTMEMBERS_DESC">
-                    <option 
+                    <option
                         value="0">JHIDE</option>
-                    <option 
+                    <option
                         value="1">JSHOW</option>
                 </field>
 
-                <field 
-                    name="numGroupFormat" 
-                    type="text" 
-                    size="32" 
-                    default="We currently have {x} members" 
-                    label="MOD_MEETUP_FIELD_NUMGROUPFORMAT_LABEL" 
+                <field
+                    name="numGroupFormat"
+                    type="text"
+                    size="32"
+                    default="We currently have {x} members"
+                    label="MOD_MEETUP_FIELD_NUMGROUPFORMAT_LABEL"
                     description="MOD_MEETUP_FIELD_NUMGROUPFORMAT_DESC" />-->
 
-                <!--<field 
-                    name="timeout" 
-                    type="text" 
-                    size="5" 
-                    default="2" 
-                    label="MOD_MEETUP_FIELD_TIMEOUT_LABEL" 
+                <!--<field
+                    name="timeout"
+                    type="text"
+                    size="5"
+                    default="2"
+                    label="MOD_MEETUP_FIELD_TIMEOUT_LABEL"
                     description="MOD_MEETUP_FIELD_TIMEOUT_DESC" />-->
 
-                <field 
-                    name="eventEmptyMessage" 
-                    type="textarea" 
-                    rows="10" 
-                    cols="5" 
-                    filter="raw" 
-                    default="Our next event has not yet been scheduled" 
-                    label="MOD_MEETUP_NOEVENTMESSAGE_LABEL" 
+                <field
+                    name="eventEmptyMessage"
+                    type="textarea"
+                    rows="10"
+                    cols="5"
+                    filter="raw"
+                    default="Our next event has not yet been scheduled"
+                    label="MOD_MEETUP_NOEVENTMESSAGE_LABEL"
                     description="MOD_MEETUP_NOEVENTMESSAGE_DESC" />
 
             </fieldset>
@@ -244,13 +240,13 @@
 
                 <field
                     name="load_css"
-                    type="radio" 
-                    default="0" 
+                    type="radio"
+                    default="0"
                     label="MOD_MEETUP_LOADCSS_LABEL"
                     description="MOD_MEETUP_LOADCSS_DESC" >
-                    <option 
+                    <option
                         value="0">JNO</option>
-                    <option 
+                    <option
                         value="1">JYES</option>
                 </field>
 
