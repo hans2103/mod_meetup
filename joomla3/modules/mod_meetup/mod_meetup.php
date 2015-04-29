@@ -31,5 +31,6 @@ if ($params->get('showEvents'))
 }
 
 // Display template
-require( JModuleHelper::getLayoutPath( 'mod_meetup' ) );
+$layout           = $params->get('layout', 'default');
+require( JModuleHelper::getLayoutPath( 'mod_meetup', $layout ) );
 ?>
