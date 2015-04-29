@@ -6,7 +6,7 @@
     <authorUrl>http://hkweb.nl</authorUrl>
     <creationDate>September 2013</creationDate>
     <license>Released under the GNU/GPL License</license>
-    <version>2.1.2</version>
+    <version>3.0.0</version>
     <description>MOD_MEETUP_DESC</description>
 
     <files folder="site">
